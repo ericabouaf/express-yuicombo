@@ -1,37 +1,35 @@
 <html>
 <head>
 <title>Express-YUI-combo demo</title>
-
 <script src="/3.5.0pr1/build/yui/yui.js"></script>
-
 </head>
 <body class="yui3-skin-sam">
+
+<p style="font-weight: bold;">Important : You must install a YUI download of 3.5.0pr1 in the public/ folder</p>
 
 <p>Check the network tab of you favorite debugging tool to see the YUI combo request...</p>
 
 <script>
 YUI({
+	// set 'combine' to false during client-side development
 	combine: true,
+	
+	// set the same URL on which you installed express-yuicombo in your routes
 	comboBase: '/yui-combo?',
 	
 	groups : {
-    myDemoModules : {
-      combine : true,
-      root : "mydemomodules/",
-      filter: 'raw',
-      modules : {
-        'my-yui-module' : {
-          requires : ['widget', 'widget-stdmod']
-        }
-      }
-    }
-  }
-}).use( 'my-yui-module', function(Y) {
-	
-	// code something here !
-	
-});
-
+		myDemoModules : {
+			base: "mydemomodules/",
+			root : "mydemomodules/",
+			filter: 'raw',
+			modules : {
+				'my-yui-module' : {
+					requires : ['widget', 'widget-stdmod']
+				}
+			}
+		}
+	}
+}).use('my-yui-module'/*, function(Y) {}*/);
 
 </script>
 </body>

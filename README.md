@@ -1,23 +1,21 @@
 # Express.js YUI Combo Loader
 
-Only works with YUI 3.5+ ? (loader asking for all dependencies)
+Very early version
 
-Very early
+Only works with YUI 3.4+ ? (yui-loader asking for all dependencies, no implicit)
 
 ## TODO :
 
-
-* TODO: correct assets path /url\([\"\']?(.*)[\"\']?\)/
-* TODO: cache generated files
+ * disk cache
 
 ## Install
 
    npm install express-yuicombo
 
-## Usage
+## Server-Side Use
 
     var express = require('express'), 
-        YuiComboLoader = require('../lib/yuicombo').YuiComboLoader;
+        YuiComboHandler = require('../lib/express-yuicombo').YuiComboHandler;
     
     var app = express.createServer();
     
@@ -27,7 +25,8 @@ Very early
         res.redirect('/demo.html');
     });
     
-    app.get('/yui-combo', YuiComboLoader('./public/') );
+    // Install the combo route and sets the root folder for files
+    app.get('/yui-combo', YuiComboHandler('./public/') );
     
     app.listen(3000);
     
@@ -36,6 +35,7 @@ Very early
 
 ## Author
 
-Eric Abouaf 
+Eric Abouaf
+
 http://github.com/neyric
 

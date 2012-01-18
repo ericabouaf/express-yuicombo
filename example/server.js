@@ -1,5 +1,5 @@
 var express = require('express'), 
-    YuiComboLoader = require('../lib/yuicombo').YuiComboLoader;
+    YuiComboHandler = require('../lib/express-yuicombo').YuiComboHandler;
     
 var app = express.createServer();
 
@@ -9,7 +9,8 @@ app.get('/', function(req, res){
 	res.redirect('/demo.html');
 });
 
-app.get('/yui-combo', YuiComboLoader('./public/') );
+// Install the combo route and sets the root folder for files
+app.get('/yui-combo', YuiComboHandler('./public/') );
 
 app.listen(3000);
 
