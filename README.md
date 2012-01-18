@@ -10,12 +10,12 @@ Only works with YUI 3.4+ ? (yui-loader asking for all dependencies, no implicit)
 
 ## Install
 
-   npm install express-yuicombo
+    npm install express-yuicombo
 
 ## Server-Side Use
 
     var express = require('express'), 
-        YuiComboHandler = require('../lib/express-yuicombo').YuiComboHandler;
+        YuiComboHandler = require('express-yuicombo').YuiComboHandler;
     
     var app = express.createServer();
     
@@ -32,6 +32,29 @@ Only works with YUI 3.4+ ? (yui-loader asking for all dependencies, no implicit)
     
     console.log("listening on http://localhost:3000");
     
+
+## Client-side
+      
+      YUI({
+         // set 'combine' to false during client-side development
+      	combine: true,
+      
+      	// set the same URL on which you installed express-yuicombo in your routes
+      	comboBase: '/yui-combo?',
+      
+      	groups : {
+      		myDemoModules : {
+      			base: "mydemomodules/",
+      			root : "mydemomodules/",
+      			filter: 'raw',
+      			modules : {
+      				'my-yui-module' : {
+      					requires : ['widget', 'widget-stdmod']
+      				}
+      			}
+      		}
+      	}
+      }).use('my-yui-module'/*, function(Y) {}*/);
 
 ## Author
 
