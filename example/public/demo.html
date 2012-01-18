@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Express-YUI-combo demo</title>
+
+<script src="/3.5.0pr1/build/yui/yui.js"></script>
+
+</head>
+<body class="yui3-skin-sam">
+
+<p>Check the network tab of you favorite debugging tool to see the YUI combo request...</p>
+
+<script>
+YUI({
+	combine: true,
+	comboBase: '/yui-combo?',
+	
+	groups : {
+    myDemoModules : {
+      combine : true,
+      root : "mydemomodules/",
+      filter: 'raw',
+      modules : {
+        'my-yui-module' : {
+          requires : ['widget', 'widget-stdmod']
+        }
+      }
+    }
+  }
+}).use( 'my-yui-module', function(Y) {
+	
+	// code something here !
+	
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+    "name": "express-yuicombo",
+    "description": "YUI Combo Server for Express.js",
+    "version": "0.0.1",
+    "author": "Eric Abouaf <eric.abouaf@gmail.com>",
+    "bugs": { "url" : "http://github.com/neyric/express-yuicombo/issues" },
+    "os": ["darwin", "linux"],
+    "contributors": [
+        "Eric Abouaf <eric.abouaf@gmail.com> (http://neyric.com)"
+    ],
+    "engines": {
+        "node" : ">=0.6.7"
+    },
+    "directories": {
+        "lib" : "lib"
+    },
+    "dependencies": {
+    },
+    "licenses":[  {"type" : "MIT"} ],
+    "repository": {
+        "type":"git",
+        "url":"http://github.com/neyric/express-yuicombo.git"
+    }
+}
