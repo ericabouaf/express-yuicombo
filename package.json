@@ -8,6 +8,7 @@
     "contributors": [
         "Eric Abouaf <eric.abouaf@gmail.com> (http://neyric.com)"
     ],
+    "main": "lib/express-yuicombo",
     "engines": {
         "node" : ">=0.6.7"
     },
