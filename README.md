@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/neyric/express-yuicombo.png)](http://travis-ci.org/neyric/express-yuicombo)
 # Express.js YUI Combo Loader
 
 Very early version
